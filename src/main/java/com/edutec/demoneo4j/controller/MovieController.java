@@ -16,7 +16,7 @@ public class MovieController {
     }
     //method implementations with walkthroughs below
 
-    @PutMapping
+    @PostMapping
     Mono<MovieEntity> createOrUpdateMovie(@RequestBody MovieEntity newMovie) {
         return movieRepository.save(newMovie);
     }
@@ -25,7 +25,8 @@ public class MovieController {
     Flux<MovieEntity> getMovies() {
         return movieRepository.findAll();
     }
-
+    
+    
 
 
 }
